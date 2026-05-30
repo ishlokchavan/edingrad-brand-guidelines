@@ -575,3 +575,15 @@ button,a{touch-action:manipulation}
   .hero{padding-top:clamp(48px,8vh,96px);padding-bottom:24px}
   .band{padding-top:clamp(40px,8vh,80px)}
 }
+
+/* ---- Voice: tone spectrum axes ---- */
+.tone-axis{padding:16px 0;border-top:1px solid var(--line);max-width:760px}
+.tone-axis:first-of-type{border-top:none}
+.tone-axis-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.tone-axis-name{font-family:'Lynx Sans';font-weight:600;color:var(--text);font-size:1.02rem}
+.tone-axis-ends{font-size:.72rem;text-transform:uppercase;letter-spacing:.16em;color:var(--accent)}
+
+/* ---- Typography: "type as voice" specimen ---- */
+.type-voice{display:grid;grid-template-columns:1fr 1fr;gap:var(--grid-gutter);margin-top:24px}
+@media(max-width:680px){.type-voice{grid-template-columns:1fr}}
+.type-voice .tv-role{font-size:.7rem;text-transform:uppercase;letter-spacing:.16em;color:var(--low);margin-bottom:10px}

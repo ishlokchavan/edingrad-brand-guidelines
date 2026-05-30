@@ -89,3 +89,61 @@ export const VOICE_PILLARS: { tag: string; essence: string; directive: string }[
     directive: 'A calm, senior register. We are never breathless, never promotional. Confidence is conveyed through precision and restraint.',
   },
 ];
+
+/**
+ * Voice principles \u2014 four rules that hold in every piece, whatever the tone.
+ * Each pairs a single instruction (Do) with its failure mode (Avoid), in the
+ * spirit of Bang & Olufsen\u2019s de-waffled precision and Bain\u2019s plain, result-led
+ * register.
+ */
+export const VOICE_PRINCIPLES: { name: string; line: string; ditch: string; keep: string }[] = [
+  {
+    name: 'Say it once, exactly',
+    line: 'Precision is the whole point. One right word beats three approximate ones, and a qualifier that carries no weight is just noise.',
+    ditch: 'In order to potentially help optimise outcomes, we leverage a range of synergistic capabilities.',
+    keep: 'We help you allocate capital where it compounds.',
+  },
+  {
+    name: 'Lead with the finding',
+    line: 'State the conclusion first, then show the work. The reader should know where they stand by the end of the first sentence \u2014 not the third paragraph.',
+    ditch: 'After extensive analysis across multiple scenarios, we arrived at a view on the position.',
+    keep: 'Reduce the position. The downside is no longer priced in.',
+  },
+  {
+    name: 'Senior, never loud',
+    line: 'Authority is shown through restraint. We do not sell, oversell, or shout. Confidence reads in what we leave out.',
+    ditch: 'This is a once-in-a-generation, can\u2019t-miss opportunity with explosive upside.',
+    keep: 'The asymmetry favours the patient holder. We are buyers.',
+  },
+  {
+    name: 'Write to one reader',
+    line: 'Address a single, intelligent person \u2014 never a market. Translate complexity into consequence, and consequence into a decision they can act on.',
+    ditch: 'Stakeholders should be cognisant of the multifaceted risk factors herein.',
+    keep: 'Here is the risk that should change your mind, and why.',
+  },
+];
+
+/**
+ * Tone spectrum \u2014 the voice is constant; the tone moves along these axes by
+ * context. Inspired by Bang & Olufsen\u2019s tone-of-voice guidance.
+ */
+export const TONE_SPECTRUM: { axis: string; left: string; right: string; note: string }[] = [
+  {
+    axis: 'Register',
+    left: 'Conversational',
+    right: 'Formal',
+    note: 'Lean formal for institutional memos; relax toward conversational for client letters and the site.',
+  },
+  {
+    axis: 'Pace',
+    left: 'Brisk',
+    right: 'Considered',
+    note: 'Brisk for alerts and decisions; considered for thesis pieces that earn their length.',
+  },
+  {
+    axis: 'Warmth',
+    left: 'Reserved',
+    right: 'Warm',
+    note: 'Reserved with peers who want the signal; warmer with private clients who want reassurance.',
+  },
+];

@@ -69,6 +69,32 @@ export function Typography() {
         </tbody>
       </table>
 
+      <h3 id="type-voice" style={{ margin: '56px 0 8px' }}>
+        Type as voice
+      </h3>
+      <p>
+        Type is where the voice becomes visible. As in Cash App&rsquo;s system &mdash; an expressive
+        display face held in check by a disciplined workhorse &mdash; Palestra carries the one
+        confident statement per view, and Lynx Sans does the patient work of explaining it. The
+        contrast between them <i>is</i> the brand: editorial gravity, then plain clarity.
+      </p>
+      <div className="type-voice">
+        <div className="card">
+          <div className="tv-role">Display &mdash; the statement</div>
+          <div style={{ fontFamily: "'Palestra', serif", fontWeight: 200, fontSize: 'clamp(1.8rem,4vw,2.8rem)', lineHeight: 1.06 }}>
+            Reduce the position. The downside is no longer priced in.
+          </div>
+        </div>
+        <div className="card">
+          <div className="tv-role">Body &mdash; the reasoning</div>
+          <p style={{ marginTop: 0 }}>
+            Set in Lynx Sans Regular at a comfortable measure. The voice is the same calm, senior
+            register everywhere &mdash; type only changes how loudly it is allowed to speak. One
+            Palestra moment per view; everything else defers to it.
+          </p>
+        </div>
+      </div>
+
       <h3 id="type-specimens" style={{ margin: '56px 0 8px' }}>
         Specimens
       </h3>

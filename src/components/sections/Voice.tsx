@@ -1,5 +1,5 @@
 import { Section } from '@/components/primitives/Section';
-import { VOICE_PILLARS } from '@/data/principles';
+import { VOICE_PILLARS, VOICE_PRINCIPLES, TONE_SPECTRUM } from '@/data/principles';
 
 const TONE = [
   ['Institutional clients', 'Peer-to-peer and precise. Lead with thesis and evidence; assume fluency. Never explain what they already know.'],
@@ -19,7 +19,8 @@ export function Voice() {
       lead={
         <>
           The Edingrad Standard governs how we write. A calm, senior register that earns trust
-          through precision and restraint &mdash; never volume.
+          through precision and restraint &mdash; never volume. The voice stays constant; only the
+          tone moves with the reader.
         </>
       }
     >
@@ -46,6 +47,38 @@ export function Voice() {
         ))}
       </div>
 
+      <h3 id="voice-principles" style={{ margin: '56px 0 8px' }}>
+        Voice principles
+      </h3>
+      <p>
+        Four rules hold in everything we publish, whatever the tone. Each pairs a single
+        instruction with the habit it replaces &mdash; the way to write like Edingrad is mostly the
+        discipline of what we refuse to say.
+      </p>
+      <div style={{ marginTop: 16 }}>
+        {VOICE_PRINCIPLES.map((p, i) => (
+          <div className="principle" key={p.name}>
+            <div className="p-idx" aria-hidden="true">
+              {String(i + 1).padStart(2, '0')}
+            </div>
+            <div>
+              <div className="p-name">{p.name}</div>
+              <p className="p-essence" style={{ fontWeight: 300 }}>
+                {p.line}
+              </p>
+              <div className="vmsg no" style={{ marginTop: 14 }}>
+                <div className="h">Avoid</div>
+                <div className="b">{p.ditch}</div>
+              </div>
+              <div className="vmsg yes" style={{ marginTop: 10 }}>
+                <div className="h">Write</div>
+                <div className="b">{p.keep}</div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
       <h3 id="voice-tone" style={{ margin: '56px 0 8px' }}>
         Tone by audience
       </h3>
@@ -55,6 +88,24 @@ export function Voice() {
           <div className="card" key={who}>
             <h4>{who}</h4>
             <p style={{ marginTop: 8 }}>{how}</p>
+          </div>
+        ))}
+      </div>
+
+      <p style={{ marginTop: 32 }}>
+        Within those audiences the tone moves along three axes. The voice is fixed; where we sit on
+        each scale is a deliberate choice, not an accident.
+      </p>
+      <div style={{ marginTop: 16 }}>
+        {TONE_SPECTRUM.map((t) => (
+          <div className="tone-axis" key={t.axis}>
+            <div className="tone-axis-head">
+              <span className="tone-axis-name">{t.axis}</span>
+              <span className="tone-axis-ends">
+                {t.left} &harr; {t.right}
+              </span>
+            </div>
+            <p style={{ marginTop: 6 }}>{t.note}</p>
           </div>
         ))}
       </div>

@@ -61,9 +61,10 @@ export const SECTIONS: SectionMeta[] = [
     sub: [
       { label: 'Typefaces', anchor: 'type' },
       { label: 'Type scale', anchor: 'type-scale' },
+      { label: 'Type as voice', anchor: 'type-voice' },
       { label: 'Specimens', anchor: 'type-specimens' },
     ],
-    keywords: ['palestra', 'lynx sans', 'type scale', 'font'],
+    keywords: ['palestra', 'lynx sans', 'type scale', 'font', 'type as voice'],
   },
   {
     id: 'color',
@@ -135,11 +136,12 @@ export const SECTIONS: SectionMeta[] = [
     group: 'BRAND',
     sub: [
       { label: 'The Edingrad Standard', anchor: 'voice' },
+      { label: 'Voice principles', anchor: 'voice-principles' },
       { label: 'Tone by audience', anchor: 'voice-tone' },
       { label: 'Vocabulary', anchor: 'voice-vocab' },
       { label: 'Litmus test', anchor: 'voice-litmus' },
     ],
-    keywords: ['tone', 'writing', 'copy', 'vocabulary'],
+    keywords: ['tone', 'writing', 'copy', 'vocabulary', 'voice principles'],
   },
   {
     id: 'resources',
