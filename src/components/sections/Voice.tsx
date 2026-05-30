@@ -51,31 +51,36 @@ export function Voice() {
         Voice principles
       </h3>
       <p>
-        Four rules hold in everything we publish, whatever the tone. Each pairs a single
-        instruction with the habit it replaces &mdash; the way to write like Edingrad is mostly the
-        discipline of what we refuse to say.
+        Four principles govern everything we publish. Use them as guidance, not gospel &mdash; not
+        every one applies every time. The way to write like Edingrad is mostly the discipline of
+        what we choose to leave out.
       </p>
-      <div style={{ marginTop: 16 }}>
+      <div className="vp-set">
         {VOICE_PRINCIPLES.map((p, i) => (
-          <div className="principle" key={p.name}>
-            <div className="p-idx" aria-hidden="true">
-              {String(i + 1).padStart(2, '0')}
+          <article className="vp" key={p.name}>
+            <h4 className="vp-h">
+              <span className="vp-num">{i + 1}.</span> {p.name}
+            </h4>
+            <p className="vp-thesis">{p.thesis}</p>
+            <div className="vp-tactics">
+              {p.tactics.map((t) => (
+                <div className="vp-tactic" key={t.title}>
+                  <div className="vp-tactic-h">{t.title}</div>
+                  <p>{t.body}</p>
+                </div>
+              ))}
             </div>
-            <div>
-              <div className="p-name">{p.name}</div>
-              <p className="p-essence" style={{ fontWeight: 300 }}>
-                {p.line}
-              </p>
-              <div className="vmsg no" style={{ marginTop: 14 }}>
+            <div className="vp-example">
+              <div className="vmsg no">
                 <div className="h">Avoid</div>
-                <div className="b">{p.ditch}</div>
+                <div className="b">{p.example.avoid}</div>
               </div>
-              <div className="vmsg yes" style={{ marginTop: 10 }}>
+              <div className="vmsg yes">
                 <div className="h">Write</div>
-                <div className="b">{p.keep}</div>
+                <div className="b">{p.example.write}</div>
               </div>
             </div>
-          </div>
+          </article>
         ))}
       </div>
 

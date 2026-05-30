@@ -91,35 +91,72 @@ export const VOICE_PILLARS: { tag: string; essence: string; directive: string }[
 ];
 
 /**
- * Voice principles \u2014 four rules that hold in every piece, whatever the tone.
- * Each pairs a single instruction (Do) with its failure mode (Avoid), in the
- * spirit of Bang & Olufsen\u2019s de-waffled precision and Bain\u2019s plain, result-led
- * register.
+ * Voice principles \u2014 four named principles, each with a one-line thesis and
+ * three concrete tactics, mirroring the structure of Bang & Olufsen's
+ * voice-principles model. The register is Edingrad's own: measured and senior
+ * rather than playful. Each closes with a Bain-style before/after rewrite.
  */
-export const VOICE_PRINCIPLES: { name: string; line: string; ditch: string; keep: string }[] = [
+export const VOICE_PRINCIPLES: {
+  name: string;
+  thesis: string;
+  tactics: { title: string; body: string }[];
+  example: { avoid: string; write: string };
+}[] = [
   {
-    name: 'Say it once, exactly',
-    line: 'Precision is the whole point. One right word beats three approximate ones, and a qualifier that carries no weight is just noise.',
-    ditch: 'In order to potentially help optimise outcomes, we leverage a range of synergistic capabilities.',
-    keep: 'We help you allocate capital where it compounds.',
+    name: 'Be precise',
+    thesis:
+      'Precision is the whole point. One right word beats three approximate ones, and a qualifier that carries no weight is just noise. We write to be understood exactly, not to sound impressive.',
+    tactics: [
+      { title: 'Cut the qualifiers', body: 'Delete \u201cpotentially\u201d, \u201cin order to\u201d, and every hedge that softens a claim without sharpening it.' },
+      { title: 'Name the specific', body: '\u201cReduce the position by a third\u201d, not \u201ctrim exposure\u201d. Concrete beats generic every time.' },
+      { title: 'One idea per sentence', body: 'Break compound sentences apart. Each should carry a single claim the reader can weigh.' },
+    ],
+    example: {
+      avoid: 'We aim to potentially help optimise risk-adjusted outcomes.',
+      write: 'We allocate where capital compounds.',
+    },
   },
   {
     name: 'Lead with the finding',
-    line: 'State the conclusion first, then show the work. The reader should know where they stand by the end of the first sentence \u2014 not the third paragraph.',
-    ditch: 'After extensive analysis across multiple scenarios, we arrived at a view on the position.',
-    keep: 'Reduce the position. The downside is no longer priced in.',
-  },
-  {
-    name: 'Senior, never loud',
-    line: 'Authority is shown through restraint. We do not sell, oversell, or shout. Confidence reads in what we leave out.',
-    ditch: 'This is a once-in-a-generation, can\u2019t-miss opportunity with explosive upside.',
-    keep: 'The asymmetry favours the patient holder. We are buyers.',
+    thesis:
+      'State the conclusion first, then show the work. A reader should know where they stand by the end of the first sentence \u2014 not the third paragraph. Evidence follows the call; it never buries it.',
+    tactics: [
+      { title: 'Conclusion first', body: 'Open with the decision or the view. Context and caveats come after it, not before.' },
+      { title: 'Show the method', body: 'Make every claim traceable to a source or a model. Assertion without evidence is only opinion.' },
+      { title: 'State the confidence', body: 'Name the conviction level and the caveats, so the reader can size the risk, not just the idea.' },
+    ],
+    example: {
+      avoid: 'After extensive multi-scenario analysis, a view was formed on the position.',
+      write: 'Reduce the position. The downside is no longer priced in.',
+    },
   },
   {
     name: 'Write to one reader',
-    line: 'Address a single, intelligent person \u2014 never a market. Translate complexity into consequence, and consequence into a decision they can act on.',
-    ditch: 'Stakeholders should be cognisant of the multifaceted risk factors herein.',
-    keep: 'Here is the risk that should change your mind, and why.',
+    thesis:
+      'Address a single, intelligent person \u2014 never a market. Formality is a barrier; clarity is courtesy. Translate complexity into consequence, and consequence into a decision they can act on.',
+    tactics: [
+      { title: 'One to one', body: 'Write \u201cyou\u201d, to one decision-maker. Drop the committee voice and the passive \u201cit is recommended\u201d.' },
+      { title: 'Translate to consequence', body: 'Don\u2019t stop at what is true; say what it means for the reader\u2019s next move.' },
+      { title: 'Read it aloud', body: 'If you wouldn\u2019t say it across a table to them, rewrite it until you would.' },
+    ],
+    example: {
+      avoid: 'Stakeholders should be cognisant of the multifaceted risk factors herein.',
+      write: 'Here is the one risk that should change your mind \u2014 and why.',
+    },
+  },
+  {
+    name: 'Senior, never loud',
+    thesis:
+      'Authority is shown through restraint, not volume. We never sell, oversell, or shout. Confidence reads in what we leave out \u2014 and in our willingness to take the long view when everyone else is chasing the quarter.',
+    tactics: [
+      { title: 'Refuse hype', body: 'No \u201cexplosive\u201d, \u201conce-in-a-generation\u201d, \u201cguaranteed\u201d. The words we ban protect the trust we keep.' },
+      { title: 'Let restraint carry', body: 'Understate. A measured line outlasts a loud one, and ages better in a downturn.' },
+      { title: 'Take the long view', body: 'Favour what compounds over what flatters today. Write as if the reader will reread you in five years.' },
+    ],
+    example: {
+      avoid: 'A once-in-a-generation, can\u2019t-miss opportunity with explosive upside.',
+      write: 'The asymmetry favours the patient holder. We are buyers.',
+    },
   },
 ];
 

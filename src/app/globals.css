@@ -576,6 +576,20 @@ button,a{touch-action:manipulation}
   .band{padding-top:clamp(40px,8vh,80px)}
 }
 
+/* ---- Voice: principles (4 named principles x 3 tactics, B&O-style) ---- */
+.vp-set{margin-top:24px}
+.vp{padding:32px 0;border-top:1px solid var(--line)}
+.vp:first-child{border-top:none;padding-top:8px}
+.vp-h{font-family:'Lynx Sans';font-weight:700;font-size:clamp(1.3rem,2.4vw,1.7rem);letter-spacing:-.01em;color:var(--text);margin-bottom:12px}
+.vp-num{color:var(--accent)}
+.vp-thesis{max-width:760px;color:var(--mid);margin-bottom:24px}
+.vp-tactics{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--grid-gutter)}
+@media(max-width:760px){.vp-tactics{grid-template-columns:1fr;gap:20px}}
+.vp-tactic-h{font-family:'Lynx Sans';font-weight:600;font-size:.98rem;color:var(--text);margin-bottom:6px}
+.vp-tactic p{font-size:.9rem;color:var(--mid);max-width:none}
+.vp-example{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px;max-width:760px}
+@media(max-width:560px){.vp-example{grid-template-columns:1fr}}
+
 /* ---- Voice: tone spectrum axes ---- */
 .tone-axis{padding:16px 0;border-top:1px solid var(--line);max-width:760px}
 .tone-axis:first-of-type{border-top:none}
