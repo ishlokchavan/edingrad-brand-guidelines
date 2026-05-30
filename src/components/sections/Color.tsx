@@ -2,11 +2,13 @@ import { Section } from '@/components/primitives/Section';
 import {
   BLUE_SCALE,
   GRAY_SCALE,
+  FULL_PALETTE,
   CORE_FAMILIES,
   CATEGORICAL,
   ALERTS,
   DARK_SURFACES,
   type Swatch,
+  type PaletteFamily,
 } from '@/data/colors';
 
 /** Relative luminance test to pick a readable label color on a swatch. */
@@ -24,6 +26,52 @@ function ScaleBar({ steps }: { steps: Swatch[] }) {
       {steps.map((s) => (
         <div key={s.step} className="seg" style={{ background: s.hex, color: isLight(s.hex) ? '#161616' : '#fff' }}>
           <span>{s.step}</span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+/** The full IBM palette: one row per family, ten steps each (10 -> 100). */
+function PaletteGrid({ families }: { families: PaletteFamily[] }) {
+  return (
+    <div style={{ display: 'grid', gap: 14, marginTop: 24 }}>
+      {families.map((fam) => (
+        <div key={fam.name}>
+          <div
+            style={{
+              fontSize: '.78rem',
+              fontWeight: 600,
+              color: 'var(--mid)',
+              marginBottom: 6,
+            }}
+          >
+            {fam.name}
+          </div>
+          <div style={{ display: 'flex', borderRadius: 4, overflow: 'hidden' }}>
+            {fam.steps.map((s) => (
+              <div
+                key={s.step}
+                title={`${fam.name} ${s.step} · ${s.hex.toUpperCase()}`}
+                style={{
+                  background: s.hex,
+                  flex: 1,
+                  height: 56,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  padding: '6px 8px',
+                  color: isLight(s.hex) ? '#161616' : '#fff',
+                  fontSize: '.62rem',
+                  lineHeight: 1.1,
+                  fontVariantNumeric: 'tabular-nums',
+                }}
+              >
+                <span style={{ fontWeight: 600 }}>{s.step}</span>
+                <span style={{ opacity: 0.85 }}>{s.hex.toUpperCase()}</span>
+              </div>
+            ))}
+          </div>
         </div>
       ))}
     </div>
@@ -52,9 +100,11 @@ export function Color() {
         Color families
       </h3>
       <p>
-        The full IBM-derived palette &mdash; seven hue families, each in ten steps (10 light &rarr;
-        100 dark). Blue leads the brand; the others support data, status and accent use.
+        The full IBM palette &mdash; ten hue families plus three neutral grays, each in ten steps
+        (10 light &rarr; 100 dark). Every value matches the IBM Design Language exactly. Blue leads
+        the brand; the others support data, status and accent use.
       </p>
+      <PaletteGrid families={FULL_PALETTE} />
 
       <h3 id="color-core" style={{ margin: '48px 0 8px' }}>
         Core color families
