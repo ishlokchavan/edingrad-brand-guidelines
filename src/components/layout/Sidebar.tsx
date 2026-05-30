@@ -51,17 +51,24 @@ export function Sidebar({ active, onNavigate, open }: SidebarProps) {
             data-sec={s.id}
           >
             <div className="nav-item">
-              <a href={`#${s.id}`} onClick={onNavigate}>
+              <a href={`#${s.id}`} aria-current={isActive ? 'true' : undefined} onClick={onNavigate}>
                 {s.navLabel ?? s.title}
               </a>
               {hasSub && (
-                <button className="chev" aria-label={`Toggle ${s.title}`} onClick={() => toggle(s.id)}>
+                <button
+                  type="button"
+                  className="chev"
+                  aria-label={`Toggle ${s.title}`}
+                  aria-expanded={isOpen}
+                  aria-controls={`nav-sub-${s.id}`}
+                  onClick={() => toggle(s.id)}
+                >
                   <Chevron />
                 </button>
               )}
             </div>
             {hasSub && (
-              <div className="nav-sub">
+              <div className="nav-sub" id={`nav-sub-${s.id}`}>
                 {s.sub.map((sub) => (
                   <a key={sub.anchor} href={`#${sub.anchor}`} onClick={onNavigate}>
                     {sub.label}

@@ -58,7 +58,12 @@ export function Shell({ children }: { children: ReactNode }) {
         Skip to content
       </a>
       <div className="progress" style={{ width: `${progress}%` }} aria-hidden="true" />
-      <Header onMenu={() => setNavOpen((v) => !v)} onSearch={() => setSearchOpen(true)} />
+      <Header
+        onMenu={() => setNavOpen((v) => !v)}
+        onSearch={() => setSearchOpen(true)}
+        navOpen={navOpen}
+        searchOpen={searchOpen}
+      />
       <Sidebar active={active} open={navOpen} onNavigate={closeNav} />
       {navOpen && <div className="nav-scrim" onClick={closeNav} aria-hidden="true" />}
       <main className="ud-main" id="main" tabIndex={-1}>

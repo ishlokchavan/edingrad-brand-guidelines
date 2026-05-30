@@ -100,7 +100,7 @@ p b,p strong{color:var(--text);font-weight:500}
   border-left:2px solid transparent;transition:.18s;user-select:none}
 .nav-item:hover{color:var(--text);background:var(--hover)}
 .nav-group.active>.nav-item{color:var(--text);border-left-color:var(--accent);background:var(--selected);font-weight:500}
-.chev{background:none;border:none;color:var(--low);cursor:pointer;display:flex;padding:4px;transition:transform .25s}
+.chev{background:none;border:none;color:var(--low);cursor:pointer;display:flex;align-items:center;justify-content:center;min-width:36px;min-height:36px;padding:8px;margin-right:-6px;transition:transform .25s}
 .chev svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2}
 .nav-group.open .chev{transform:rotate(180deg)}
 .nav-sub{max-height:0;overflow:hidden;transition:max-height .3s ease}
