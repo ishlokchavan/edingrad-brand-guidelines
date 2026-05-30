@@ -519,3 +519,59 @@ button,a{touch-action:manipulation}
 @media(max-width:980px){.nav-scrim{display:block}}
 .nav-item a{flex:1;color:inherit;text-decoration:none;cursor:pointer}
 .nav-item a:hover{color:inherit}
+
+/* ============================================================
+   Responsiveness — mobile-first hardening across all screen sizes.
+   Wide content (tables, fixed demos) scrolls within its own region
+   instead of forcing horizontal scroll on the page; breakpoints are
+   aligned; chrome and type scale comfortably from 320px to ultrawide.
+   ============================================================ */
+
+/* Wide tables get their own horizontal scroll region (page never scrolls
+   sideways). Momentum scroll on iOS; a faint edge cue hints at overflow. */
+.table-scroll{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+.table-scroll .bp-table{min-width:480px}
+.table-scroll:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+
+/* Align the mobile-drawer breakpoint with the scrim (was 900 vs 980). */
+@media(max-width:900px){.nav-scrim{display:block}}
+@media(min-width:901px){.nav-scrim{display:none}}
+
+/* Icon-size specimen: allow the fixed-size icons to wrap on small screens. */
+.icon-size-demo{flex-wrap:wrap;gap:16px 24px}
+.isd-cap{margin-left:0}
+
+/* Vocabulary / specimen tables also scroll rather than clip. */
+.vocab,.vtab{min-width:0}
+
+/* ---- Small phones (<=420px): tighten chrome and dense grids ---- */
+@media(max-width:420px){
+  :root{--header-h:48px}
+  .wmk span{display:none}            /* keep the brandmark, drop the subtitle */
+  .hero-stats{gap:8px}
+  .stat{min-width:calc(50% - 8px)}   /* two-up stats instead of one cramped row */
+  .swrow{grid-template-columns:repeat(auto-fill,minmax(120px,1fr))}
+  .cc-grid{grid-template-columns:repeat(auto-fill,minmax(104px,1fr))}
+  .icon-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+/* ---- Tablet drawer width adapts to small viewports ---- */
+@media(max-width:360px){
+  .ud-side{width:88vw}
+}
+
+/* ---- Use dynamic viewport height so mobile browser chrome doesn't clip ---- */
+.search-ov{min-height:100vh;min-height:100dvh}
+
+/* ---- Ultrawide (>=1760px): widen the capped reading column a touch.
+   The sidebar stays pinned left and .wrap stays left-aligned to it, so the
+   content never drifts into a disconnected center band. ---- */
+@media(min-width:1760px){
+  :root{--maxw:1232px}
+}
+
+/* ---- Landscape phones: trim tall vertical padding so content shows ---- */
+@media(max-height:520px) and (orientation:landscape){
+  .hero{padding-top:clamp(48px,8vh,96px);padding-bottom:24px}
+  .band{padding-top:clamp(40px,8vh,80px)}
+}

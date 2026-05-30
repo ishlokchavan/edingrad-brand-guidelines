@@ -83,26 +83,28 @@ export function Grid() {
         Layouts run on a sixteen&#8209;column grid with a <b>32&#8239;px gutter</b>. Columns and rows
         stay equal and type aligns to the gutters, not the canvas edge.
       </p>
-      <table className="bp-table">
-        <thead>
-          <tr>
-            <th>Breakpoint</th>
-            <th>Min width</th>
-            <th>Columns</th>
-            <th>Margin</th>
-            <th>Gutter</th>
-          </tr>
-        </thead>
-        <tbody>
-          {BREAKPOINTS.map((r) => (
-            <tr key={r[0]}>
-              {r.map((c, i) => (
-                <td key={i}>{c}</td>
-              ))}
+      <div className="table-scroll">
+        <table className="bp-table">
+          <thead>
+            <tr>
+              <th>Breakpoint</th>
+              <th>Min width</th>
+              <th>Columns</th>
+              <th>Margin</th>
+              <th>Gutter</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {BREAKPOINTS.map((r) => (
+              <tr key={r[0]}>
+                {r.map((c, i) => (
+                  <td key={i}>{c}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
 
       <h3 id="grid-demo" style={{ margin: '56px 0 8px' }}>
         The grid in this document

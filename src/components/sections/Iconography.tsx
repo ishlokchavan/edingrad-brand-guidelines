@@ -107,27 +107,29 @@ export function Iconography() {
         Icons are produced at four sizes. Stroke, padding, live area and corner radius all scale
         with the icon &mdash; use them at their produced size rather than rescaling artwork.
       </p>
-      <table className="bp-table">
-        <thead>
-          <tr>
-            <th>Icon size</th>
-            <th>Stroke</th>
-            <th>Padding</th>
-            <th>Live area</th>
-            <th>Corner radius</th>
-            <th>Pairs with</th>
-          </tr>
-        </thead>
-        <tbody>
-          {SIZES.map((r) => (
-            <tr key={r[0]}>
-              {r.map((c, i) => (
-                <td key={i}>{c}</td>
-              ))}
+      <div className="table-scroll">
+        <table className="bp-table">
+          <thead>
+            <tr>
+              <th>Icon size</th>
+              <th>Stroke</th>
+              <th>Padding</th>
+              <th>Live area</th>
+              <th>Corner radius</th>
+              <th>Pairs with</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {SIZES.map((r) => (
+              <tr key={r[0]}>
+                {r.map((c, i) => (
+                  <td key={i}>{c}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
       <div className="icon-size-demo">
         {[32, 24, 20, 16].map((s) => (
           <span className="isd" key={s} style={{ width: s, height: s }}>
