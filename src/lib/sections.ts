@@ -47,12 +47,13 @@ export const SECTIONS: SectionMeta[] = [
     group: 'BRAND',
     sub: [
       { label: 'Wordmark', anchor: 'logo' },
+      { label: 'Logo weights', anchor: 'logo-weights' },
       { label: 'Logo color', anchor: 'logo-color' },
       { label: 'Clear space', anchor: 'logo-clearspace' },
       { label: 'Heritage mark', anchor: 'logo-heritage' },
       { label: 'Usage', anchor: 'logo-usage' },
     ],
-    keywords: ['wordmark', 'mark', 'clear space', '8-bar', 'rebus', 'logo color'],
+    keywords: ['wordmark', 'mark', 'clear space', '8-bar', 'rebus', 'logo color', 'weight', 'thin', 'bold', 'optical size'],
   },
   {
     id: 'type',
