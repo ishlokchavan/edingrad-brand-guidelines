@@ -247,6 +247,12 @@ section.sec{border-top:1px solid var(--line)}
 .clearbox{position:relative;padding:42px;border:1px dashed var(--line-2);border-radius:0;display:inline-flex}
 .clearbox .wm-lock{font-size:1.9rem}
 .clearbox::after{content:"× clear space = cap height";position:absolute;bottom:-26px;left:0;font-size:.7rem;color:var(--low);letter-spacing:.04em}
+/* logo artwork — theme-aware swap between the dark (black) and light (white) wordmark PNGs */
+.logo-art{display:block;width:100%;margin:0 auto}
+.logo-art img{display:block;width:100%;height:auto}
+.logo-art .lg-dark{display:none}
+[data-theme="light"] .logo-art .lg-dark{display:block}
+[data-theme="light"] .logo-art .lg-light{display:none}
 
 /* voice */
 .vmsg{border:1px solid var(--line);border-radius:0;background:var(--surface);overflow:hidden}
